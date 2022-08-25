@@ -13,6 +13,6 @@ class Languages extends Model
     use HasFactory;
 
     Public function paises(){
-        return $this->belongstoMany(Country::class , 'country_languages' , 'language_id' , 'country_id');
+        return $this->belongstoMany(Country::class , 'country_languages' , 'language_id' , 'country_id')->withPivot('official');
     }
 }

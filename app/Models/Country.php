@@ -18,6 +18,6 @@ class Country extends Model
         return $this->belongsto(Region::class , 'country_id');
     } 
     Public function idiomas(){
-return $this->belongstoMany(Languages::class , 'country_languages' , 'country_id' , 'language_id');
+return $this->belongstoMany(Languages::class , 'country_languages' , 'country_id' , 'language_id')->withPivot('official');
     }
 }
